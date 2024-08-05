@@ -1,27 +1,24 @@
 #pragma once
 #include <memory>
-#include "Component.h"
-
-
-class Vec2{
-public:
-    float x, y;
-    Vec2(float x, float y):
-        x(x),y(y){}
-    
-    Vec2 operator + (Vec2 other){
-        return Vec2(this->x + other.x, this->y+other.y);
-    }
-};
+#include "Components.h"
+#include <string>
+#include "Vec2.h"
 
 
 class Entity{
 public:
     Vec2 pos;
     Vec2 speed;
-    std::shared_ptr<CTransform> c_transform;    
+    std::string name;
+    int id;
+    bool is_live = true;
+
+    std::shared_ptr<CTransform> c_transform;
+    std::shared_ptr<CInput> c_input;
+    std::shared_ptr<CShape> c_shape;    
 
     Entity();
-    
+    Entity(const std::string& name, int id);
+    void destory();
 
 };
