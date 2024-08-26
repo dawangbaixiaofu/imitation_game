@@ -5,7 +5,7 @@ cmake_minimum_required(VERSION 3.15)
 project(imitation_game)
 
 # 动态链接库目录
-# link_directories(${PROJECT_SOURCE_DIR}/SFML-2.6.1/bin)
+link_directories(${PROJECT_SOURCE_DIR}/SFML-2.6.1/bin)
 
 # 动态库文件 RELATIVE ${PROJECT_SOURCE_DIR}/bin
 file(GLOB sfml_dll ${PROJECT_SOURCE_DIR}/bin/*.dll)
